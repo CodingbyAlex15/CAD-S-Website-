@@ -1,64 +1,116 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAD&S - Coding.byAlex Development & Studios</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAD&S Website</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+  <!-- Side Menu Toggle Button -->
+  <div id="side-menu-toggle" onclick="toggleSideMenu()">
+    <span>&#x25B6;</span> <!-- Arrow Icon -->
+  </div>
 
-    <!-- Tabs -->
-    <div id="tabs">
-        <button class="active" onclick="switchTab('welcome')">Welcome</button>
-        <button onclick="switchTab('products')">Products</button>
-        <button onclick="switchTab('order')">Order</button>
-        <button onclick="switchTab('contact')">Contact</button>
-        <button onclick="switchTab('credits')">Credits</button>
+  <!-- Side Menu -->
+  <div id="side-menu">
+    <div id="menu-header">
+      <h3>Menu</h3>
+      <button id="close-menu" onclick="toggleSideMenu()">X</button>
     </div>
-
-    <!-- Content -->
-    <div id="content">
-        <div id="welcome" class="active">
-            <h1>Welcome to CAD&S</h1>
-            <p>We specialize in creating high-quality, free software products, like Codey NeoAI, to make your life easier.</p>
-            <img src="images/codey-neoai-logo.png" alt="Codey NeoAI Logo">
-        </div>
-        <div id="products">
-            <h2>Our Products</h2>
-            <p>Check out our latest product: Codey NeoAI—your coding assistant.</p>
-            <img src="images/codey-neoai-logo.png" alt="Codey NeoAI Logo">
-        </div>
-        <div id="order">
-            <h2>Place Your Order</h2>
-            <h3>Pre-Made Products</h3>
-            <form>
-                <label for="product-name">Product Name:</label>
-                <input type="text" id="product-name" name="product-name" required>
-                <label for="additional-features">Additional Features (Optional):</label>
-                <textarea id="additional-features" name="additional-features"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <h3>Custom Products</h3>
-            <form>
-                <label for="custom-name">Product Name:</label>
-                <input type="text" id="custom-name" name="custom-name" required>
-                <label for="custom-description">Description:</label>
-                <textarea id="custom-description" name="custom-description" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        <div id="contact">
-            <h2>Contact Us</h2>
-            <p>Need help or want to join the team? Reach out to us!</p>
-        </div>
-        <div id="credits">
-            <h2>Credits</h2>
-            <p>This project was made possible thanks to Alex and the amazing community support.</p>
-        </div>
+    <div id="menu-links">
+      <a href="#welcome">Welcome</a>
+      <a href="#products">Products</a>
+      <a href="#order">Order</a>
+      <a href="#contact">Contact</a>
+      <a href="#credits">Credits</a>
     </div>
+    <hr />
+    <div id="menu-settings">
+      <h4>Settings</h4>
+      <label for="dark-mode-toggle">
+        <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()" />
+        Enable Dark Mode
+      </label>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Main Content -->
+  <header>
+    <h1>CAD&S Website</h1>
+    <p>Welcome to Coding.byAlex Development & Studios</p>
+  </header>
+
+  <!-- Sections -->
+  <section id="welcome">
+    <h2>Welcome</h2>
+    <p>We specialize in creating high-quality, free software products, like Codey NeoAI, to make your life easier.</p>
+    <img src="codey-logo.png" alt="Codey NeoAI Logo" />
+  </section>
+
+  <section id="products">
+    <h2>Products</h2>
+    <p>Here are our current and completed projects:</p>
+    <ul>
+      <li>Codey NeoAI - Your AI assistant</li>
+      <li>More products coming soon!</li>
+    </ul>
+  </section>
+
+  <section id="order">
+    <h2>Order</h2>
+    <h3>Order Existing Products</h3>
+    <form id="existing-product-form">
+      <label>
+        Product Name:
+        <input type="text" name="productName" required />
+      </label>
+      <label>
+        Additional Features (Optional):
+        <textarea name="features"></textarea>
+      </label>
+      <button type="submit">Submit Order</button>
+    </form>
+
+    <h3>Order Custom Products</h3>
+    <form id="custom-product-form">
+      <label>
+        Product Name:
+        <input type="text" name="customName" required />
+      </label>
+      <label>
+        Product Description:
+        <textarea name="description" required></textarea>
+      </label>
+      <button type="submit">Submit Custom Order</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Need support or want to join our team? Get in touch with us!</p>
+    <form>
+      <label>
+        Your Email:
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Your Message:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <section id="credits">
+    <h2>Credits</h2>
+    <p>This business wouldn't have been possible without the amazing support of our contributors.</p>
+    <ul>
+      <li>Alex (Founder and Developer)</li>
+      <li>Supportive Community</li>
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
