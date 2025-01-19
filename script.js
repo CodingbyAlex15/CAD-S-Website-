@@ -1,16 +1,22 @@
-// Tab Switching
-function switchTab(tabId) {
-    const tabs = document.querySelectorAll('#tabs button');
-    const sections = document.querySelectorAll('#content > div');
-
-    tabs.forEach(tab => tab.classList.remove('active'));
-    sections.forEach(section => section.classList.remove('active'));
-
-    document.querySelector(`#tabs button[onclick="switchTab('${tabId}')"]`).classList.add('active');
-    document.getElementById(tabId).classList.add('active');
+// Toggle Side Menu
+function toggleSideMenu() {
+  const menu = document.getElementById("side-menu");
+  menu.style.left = menu.style.left === "0px" ? "-250px" : "0px";
 }
 
-// Dark Mode Toggle
+// Toggle Dark Mode
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+  const isChecked = document.getElementById("dark-mode-toggle").checked;
+  document.body.classList.toggle("dark", isChecked);
+  document.getElementById("side-menu").classList.toggle("dark", isChecked);
+  localStorage.setItem("darkMode", isChecked ? "enabled" : "disabled");
 }
+
+// Load Dark Mode Preference
+document.addEventListener("DOMContentLoaded", () => {
+  const darkMode = localStorage.getItem("darkMode");
+  const isDark = darkMode === "enabled";
+  document.body.classList.toggle("dark", isDark);
+  document.getElementById("side-menu").classList.toggle("dark", isDark);
+  document.getElementById("dark-mode-toggle").checked = isDark;
+});
