@@ -1,0 +1,64 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD&S - Coding.byAlex Development & Studios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+
+    <!-- Tabs -->
+    <div id="tabs">
+        <button class="active" onclick="switchTab('welcome')">Welcome</button>
+        <button onclick="switchTab('products')">Products</button>
+        <button onclick="switchTab('order')">Order</button>
+        <button onclick="switchTab('contact')">Contact</button>
+        <button onclick="switchTab('credits')">Credits</button>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        <div id="welcome" class="active">
+            <h1>Welcome to CAD&S</h1>
+            <p>We specialize in creating high-quality, free software products, like Codey NeoAI, to make your life easier.</p>
+            <img src="images/codey-neoai-logo.png" alt="Codey NeoAI Logo">
+        </div>
+        <div id="products">
+            <h2>Our Products</h2>
+            <p>Check out our latest product: Codey NeoAI—your coding assistant.</p>
+            <img src="images/codey-neoai-logo.png" alt="Codey NeoAI Logo">
+        </div>
+        <div id="order">
+            <h2>Place Your Order</h2>
+            <h3>Pre-Made Products</h3>
+            <form>
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                <label for="additional-features">Additional Features (Optional):</label>
+                <textarea id="additional-features" name="additional-features"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <h3>Custom Products</h3>
+            <form>
+                <label for="custom-name">Product Name:</label>
+                <input type="text" id="custom-name" name="custom-name" required>
+                <label for="custom-description">Description:</label>
+                <textarea id="custom-description" name="custom-description" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>Need help or want to join the team? Reach out to us!</p>
+        </div>
+        <div id="credits">
+            <h2>Credits</h2>
+            <p>This project was made possible thanks to Alex and the amazing community support.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
