@@ -19,11 +19,11 @@
       <button id="close-menu" onclick="toggleSideMenu()">X</button>
     </div>
     <div id="menu-links">
-      <a href="#welcome">Welcome</a>
-      <a href="#products">Products</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-      <a href="#credits">Credits</a>
+      <a href="#" onclick="showTab('welcome')">Welcome</a>
+      <a href="#" onclick="showTab('products')">Products</a>
+      <a href="#" onclick="showTab('order')">Order</a>
+      <a href="#" onclick="showTab('contact')">Contact</a>
+      <a href="#" onclick="showTab('credits')">Credits</a>
     </div>
     <hr />
     <div id="menu-settings">
@@ -42,13 +42,13 @@
   </header>
 
   <!-- Sections -->
-  <section id="welcome">
+  <section id="welcome" class="tab">
     <h2>Welcome</h2>
     <p>We specialize in creating high-quality, free software products, like Codey NeoAI, to make your life easier.</p>
     <img src="codey-logo.png" alt="Codey NeoAI Logo" />
   </section>
 
-  <section id="products">
+  <section id="products" class="tab" style="display: none;">
     <h2>Products</h2>
     <p>Here are our current and completed projects:</p>
     <ul>
@@ -57,52 +57,7 @@
     </ul>
   </section>
 
-  <section id="order">
-    <h2>Order</h2>
-    <h3>Order Existing Products</h3>
-    <form id="existing-product-form">
-      <label>
-        Product Name:
-        <input type="text" name="productName" required />
-      </label>
-      <label>
-        Additional Features (Optional):
-        <textarea name="features"></textarea>
-      </label>
-      <button type="submit">Submit Order</button>
-    </form>
-
-    <h3>Order Custom Products</h3>
-    <form id="custom-product-form">
-      <label>
-        Product Name:
-        <input type="text" name="customName" required />
-      </label>
-      <label>
-        Product Description:
-        <textarea name="description" required></textarea>
-      </label>
-      <button type="submit">Submit Custom Order</button>
-    </form>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Need support or want to join our team? Get in touch with us!</p>
-    <form>
-      <label>
-        Your Email:
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Your Message:
-        <textarea name="message" required></textarea>
-      </label>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <section id="credits">
+  <section id="credits" class="tab" style="display: none;">
     <h2>Credits</h2>
     <p>This business wouldn't have been possible without the amazing support of our contributors.</p>
     <ul>
